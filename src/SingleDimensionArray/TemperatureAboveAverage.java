@@ -33,6 +33,16 @@ public class TemperatureAboveAverage {
         }
     }
 
+//    calculating average
+    public static void Average(double[] arr) {
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        double average = sum / arr.length;
+        System.out.println("Average temperature = " + average);
+    }
+
     public static void main(String[] args) {
         TemperatureAboveAverage T1 = new TemperatureAboveAverage(5);
 
@@ -45,6 +55,9 @@ public class TemperatureAboveAverage {
             T1.insert(i, temp);
         }
          System.out.println("Recorded temperatures are: " + Arrays.toString(T1.arr));
+
+//        calling average method
+        Average(T1.arr);
         scanner.close();
     }
 }
