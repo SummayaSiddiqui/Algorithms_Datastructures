@@ -87,7 +87,7 @@ public class MovieTheatreImplementation {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] == Integer.MIN_VALUE) {
-                    System.out.println("\nThe following seats marked with O are available");
+                    System.out.println("The following seats marked in green are available");
                     System.out.println();
                     displaySeatingChart();
                     return;
