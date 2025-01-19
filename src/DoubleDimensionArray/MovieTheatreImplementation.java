@@ -23,19 +23,19 @@ public class MovieTheatreImplementation {
         }
     }
 
-//    public void insert (char r, int c, int seatNumber) {
-//        try {
-//            int rowName = r - 'A';
-//            if (arr[rowName][c] == Integer.MIN_VALUE){
-//                arr[rowName][c] = seatNumber;
-//                System.out.println("Successfully inserted");
-//            } else {
-//                System.out.println("The location is already occupied");
-//            }
-//        } catch (ArrayIndexOutOfBoundsException e) {
-//            System.out.println("Invalid index for 2D array");
-//        }
-//    }
+    public void reserveSeat (char r, int c) {
+        try {
+            int rowName = r - 'A';
+            if (arr[rowName][c] == Integer.MIN_VALUE){
+                arr[rowName][c] = 1;
+                System.out.println("Seat " + r + (c + 1) + " has been reserved");
+            } else {
+                System.out.println("Sorry, Seat " + r + (c + 1) + " is already taken.");
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Invalid seat. Please try again with a valid seat number.");
+        }
+    }
 
 //    Method to display the seating chart
     public void displaySeatingChart() {
@@ -68,8 +68,13 @@ public class MovieTheatreImplementation {
                 seat.displaySeatingChart();
                 System.out.println();
             } else if (choice == 2) {
-                System.out.println();
-            } else if (choice == 3) {
+                System.out.println("Enter seat number to reserve (e.g., A1, B3):");
+                String input = scanner.nextLine().toUpperCase();
+                char row = input.charAt(0);
+                int column = Integer.parseInt(input.substring(1)) - 1;
+                seat.reserveSeat(row, column);
+            }
+            else if (choice == 3) {
                 System.out.println("Thank you for using the app!");
                 break;
             } else {
