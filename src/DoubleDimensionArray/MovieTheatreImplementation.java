@@ -38,6 +38,10 @@ public class MovieTheatreImplementation {
 
     public void displaySeatingChart() {
 //        Took help from AI to add some fancy spacing to display seat chart
+//        Using ANSI escape codes for colors
+        final String RESET = "\u001B[0m";
+        final String GREEN = "\u001B[32m"; // Green for available seats
+        final String RED = "\u001B[31m";   // Red for booked seats
 //        Print column numbers
         System.out.print("     ");
         for (int c = 1; c <= arr[0].length; c++) {
@@ -51,9 +55,9 @@ public class MovieTheatreImplementation {
             System.out.printf("%-3c", (char) ('A' + r));
             for (int c = 0; c < arr[r].length; c++) {
                 if (arr[r][c] == Integer.MIN_VALUE) {
-                    System.out.print("  □  ");
+                    System.out.print(GREEN + "  ■  "  + RESET);
                 } else {
-                    System.out.print("  ■  ");
+                    System.out.print(RED + "  ■  " + RESET);
                 }
             }
             System.out.println();
