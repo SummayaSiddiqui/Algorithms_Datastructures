@@ -23,20 +23,45 @@ public class MovieTheatreImplementation {
     }
 
 //    Method to display the seating chart
+//    public void displaySeatingChart() {
+//        for(int r = 0; r < arr.length; r++) {
+//            for(int c = 0 ; c < arr[r].length; c++) {
+//                if (arr[r][c] == Integer.MIN_VALUE) {
+//                    System.out.print("□  ");
+//                } else {
+//                    System.out.print("■  ");
+//                }
+//            }
+//            System.out.println();
+//        }
+//    }
+
     public void displaySeatingChart() {
-        for(int r = 0; r < arr.length; r++) {
-            for(int c = 0 ; c < arr[r].length; c++) {
+//        Took help from AI to add some fancy spacing to display seat chart
+//        Print column numbers
+        System.out.print("     ");
+        for (int c = 1; c <= arr[0].length; c++) {
+            System.out.printf("%-5d", c);
+        }
+        System.out.println();
+        System.out.println();
+
+//        Print rows with row labels and seat symbols
+        for (int r = 0; r < arr.length; r++) {
+            System.out.printf("%-3c", (char) ('A' + r));
+            for (int c = 0; c < arr[r].length; c++) {
                 if (arr[r][c] == Integer.MIN_VALUE) {
-                    System.out.print("O ");
+                    System.out.print("  □  ");
                 } else {
-                    System.out.print("X ");
+                    System.out.print("  ■  ");
                 }
             }
+            System.out.println();
             System.out.println();
         }
     }
 
-//    Method to reserve a seat
+    //    Method to reserve a seat
     public void reserveSeat (char r, int c) {
         try {
             int rowName = r - 'A';
@@ -84,7 +109,7 @@ public class MovieTheatreImplementation {
     }
     public static void main(String[] args) {
 //        if there are 10 rows and 10 seats in each row
-        MovieTheatreImplementation seat = new MovieTheatreImplementation('E',10);
+        MovieTheatreImplementation seat = new MovieTheatreImplementation('K',20);
         System.out.println("Welcome to the seat booking app.");
         Scanner scanner = new Scanner(System.in);
         while (true) {
