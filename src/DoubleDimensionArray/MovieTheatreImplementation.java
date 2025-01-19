@@ -26,15 +26,29 @@ public class MovieTheatreImplementation {
     public void reserveSeat (char r, int c) {
         try {
             int rowName = r - 'A';
-            if (arr[rowName][c] == Integer.MIN_VALUE){
+            if (arr[rowName][c] == Integer.MIN_VALUE) {
                 arr[rowName][c] = 1;
                 System.out.println("Seat " + r + (c + 1) + " has been reserved");
             } else {
                 System.out.println("Sorry, Seat " + r + (c + 1) + " is already taken.");
+                displayReservedSeat();
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Invalid seat. Please try again with a valid seat number.");
         }
+    }
+
+    public void displayReservedSeat() {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] == Integer.MIN_VALUE) {
+                    System.out.println("Look below to find the available seats (X shows reserved, O shows available)");
+                    displaySeatingChart();
+                    return;
+                }
+            }
+        }
+        System.out.println("No available seats.");
     }
 
 //    Method to display the seating chart
