@@ -1,7 +1,5 @@
 package LinkedList.DoubleLinkedList;
 
-import LinkedList.SingleLinkedList.Node;
-import org.w3c.dom.ls.LSOutput;
 
 /**
  * Implement an application that support undo/redo functionality. Use a linked list to maintain a sequence of states.\
@@ -37,7 +35,6 @@ public class UndoRedoManager<T> {
         if (currentState == null) {
             currentState = newNode;
         } else {
-            // Append new state and clear redo history
             newNode.prev = currentState;
             currentState.next = newNode;
             currentState = newNode;
