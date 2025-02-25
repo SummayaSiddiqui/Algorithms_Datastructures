@@ -4,7 +4,7 @@ public class Task {
     private String taskDescription;
     private boolean status;
 
-    public Task(String task){
+    public Task(String taskDescription){
         this.taskDescription = taskDescription;
         this.status = false;
     }
@@ -14,7 +14,7 @@ public class Task {
     }
 
     // getters
-    public String getTask() {
+    public String getTaskDescription() {
         return taskDescription;
     }
 
@@ -23,7 +23,7 @@ public class Task {
     }
 
     // setters
-    public void setTask(String taskDescription) {
+    public void setTaskDescription(String taskDescription) {
         this.taskDescription = taskDescription;
     }
 
