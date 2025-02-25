@@ -20,6 +20,23 @@ public class Main {
 //        // Print tasks again to see the status update
 //        System.out.println("\nUpdated To-Do List:");
 //        taskList.printAllTasks();
+
+//        // Create a user
+//        User user = new User("John");
+//
+//        // Add tasks to the user's to-do list
+//        user.addTask(new Task("Buy groceries"));
+//        user.addTask(new Task("Complete homework"));
+//        user.addTask(new Task("Clean the house"));
+//
+//        // Print all tasks
+//        user.printAllTasks();
+//
+//        // Mark a task as completed
+//        user.markTaskAsCompleted("Complete homework");
+//
+//        // Print updated tasks
+//        user.printAllTasks();
     }
 
 }
