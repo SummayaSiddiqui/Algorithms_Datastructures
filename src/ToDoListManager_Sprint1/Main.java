@@ -2,41 +2,40 @@ package ToDoListManager_Sprint1;
 
 public class Main {
     public static void main(String[] args) {
-//        TaskList taskList = new TaskList();
-//
-//        // Add some tasks
-//        taskList.addTask(new Task("Buy groceries"));
-//        taskList.addTask(new Task("Complete homework"));
-//        taskList.addTask(new Task("Clean the house"));
-//        taskList.addTask((new Task("Reading a book.")));
-//
-//        // Print all tasks
-//        System.out.println("To-Do List Manager:");
-//        taskList.printAllTasks();
-//
-//        // Mark a task as completed
-//        taskList.markTaskAsCompleted("Complete homework");
-//
-//        // Print tasks again to see the status update
-//        System.out.println("\nUpdated To-Do List:");
-//        taskList.printAllTasks();
+    // Create an array of User objects
+        User[] users = new User[3];
 
-//        // Create a user
-//        User user = new User("John");
-//
-//        // Add tasks to the user's to-do list
-//        user.addTask(new Task("Buy groceries"));
-//        user.addTask(new Task("Complete homework"));
-//        user.addTask(new Task("Clean the house"));
-//
-//        // Print all tasks
-//        user.printAllTasks();
-//
-//        // Mark a task as completed
-//        user.markTaskAsCompleted("Complete homework");
-//
-//        // Print updated tasks
-//        user.printAllTasks();
+        users[0] = new User("John");
+        users[1] = new User("Alice");
+        users[2] = new User("Sean");
+
+    // Add tasks to users' to-do lists
+        users[0].addTask(new Task("Buy groceries"));
+        users[0].addTask(new Task("Complete homework"));
+        users[0].addTask(new Task("Clean the house"));
+
+        users[1].addTask(new Task("Buy groceries"));
+        users[1].addTask(new Task("Complete homework"));
+        users[1].addTask(new Task("Clean the house"));
+
+    // Print all tasks for John
+        users[0].printAllTasks();
+
+    // Mark a task as completed for John
+        users[0].markTaskAsCompleted("Complete homework");
+
+    // Print updated tasks for John
+        users[0].printAllTasks();
+        System.out.println("------------------------------------------");
+
+    // Print all tasks for Alice
+        users[1].printAllTasks();
+
+    // Mark a task as completed for Alice
+        users[1].markTaskAsCompleted("Buy groceries");
+
+    // Print updated tasks for Alice
+        users[1].printAllTasks();
+
     }
-
 }
